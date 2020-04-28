@@ -1,8 +1,15 @@
 import React from 'react';
+import { Route, Redirect } from 'react-router-dom';
+
+const permissions = false;
 
 const AdminPage = () => {
     return ( 
-        <div>Logowanie</div>
+        <Route render={() => (
+            permissions 
+                ? <h3>Panel admina</h3>
+                : <Redirect to="/login" />
+        )} />
      );
 }
  
